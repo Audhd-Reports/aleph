@@ -137,7 +137,7 @@ services:
   ui:
     build:
       context: ui
-    image: alephdata/aleph-ui:${ALEPH_TAG:-latest}
+    image: ghcr.io/alephdata/aleph-ui:${ALEPH_TAG:-latest}
     depends_on:
       - api
     command: "bash -c 'rsync --archive --inplace --no-compress --whole-file /node_modules /alephui && npm run start'"

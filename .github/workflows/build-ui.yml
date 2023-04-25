@@ -29,12 +29,18 @@ jobs:
 
       - name: Check code formatting
         run: make format-check-ui
+        # env:
+        #   ALEPH_TAG: ${{ env.GITHUB_SHA }}
 
       - name: Run linter
         run: make lint-ui
+        # env:
+        #   ALEPH_TAG: ${{ env.GITHUB_SHA }}
 
       - name: Run tests
         run: make test-ui
+        # env:
+        #   ALEPH_TAG: ${{ env.GITHUB_SHA }}
 
       - name: Build production image
         run: docker build -t ghcr.io/alephdata/aleph-ui-production:${GITHUB_SHA} -f ui/Dockerfile.production ui
