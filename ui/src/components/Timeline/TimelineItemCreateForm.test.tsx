@@ -79,7 +79,7 @@ it('loads entity suggestions for source and target fields', async () => {
   await selectSchema('Ownership');
   await userEvent.click(screen.getByRole('button', { name: 'Owner' }));
 
-  cosnole.log(fetchEntitySuggestions.mock.calls); //eslint-disable-line
+  console.log(fetchEntitySuggestions.mock.calls); //eslint-disable-line
   console.log(document.body.innerHTML); //eslint-disable-line
   const suggestion = await screen.findByRole('menuitem', {
     name: 'ACME, Inc.',
