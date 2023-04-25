@@ -79,10 +79,10 @@ it('loads entity suggestions for source and target fields', async () => {
   await selectSchema('Ownership');
   await userEvent.click(screen.getByRole('button', { name: 'Owner' }));
 
+  console.log(document.body.innerHTML); //eslint-disable-line
   const suggestion = await screen.findByRole('menuitem', {
     name: 'ACME, Inc.',
   });
-  console.log(document.body.innerHTML); //eslint-disable-line
   expect(suggestion).toBeInTheDocument();
 });
 
