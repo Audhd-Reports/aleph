@@ -83,6 +83,7 @@ it('loads entity suggestions for source and target fields', async () => {
   const suggestion = await screen.findByRole('menuitem', {
     name: 'ACME, Inc.',
   });
+  console.log(suggestion); //eslint-disable-line
   expect(suggestion).toBeInTheDocument();
 });
 
